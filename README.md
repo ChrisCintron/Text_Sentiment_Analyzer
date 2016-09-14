@@ -7,7 +7,7 @@ Last Update: September 14, 2016
 How to use:
 The code currently presented is the source code in Python3 as well as the excel dictionaries needed for the script to work.
 
-1.Open up terminal, navigate to your working dir and then type /python3 tsapp.py
+1. Open up terminal, navigate to your working dir and then type /python3 tsapp.py
 
 2. The application GUI will appear. Click 'Open txt file' on to select a PLAIN .txt file of your choosing.
 
