@@ -8,10 +8,13 @@ How to use:
 Mac Version: https://github.com/ChrisCintron/Text_Sentiment_Analyzer/SentimentCalc.app.zip
 Windows Version: Coming soon..
 
-IMPORTANT.
+##IMPORTANT
 - Make sure you have downloaded both the zip file AND 'amels_dictionaries' from the repo. This dictionary is needed in order for the program to work.
 - Application currently only supports PLAIN TEXT FILES. Make sure your text file is cleaned up and only contains characters   A-Z. The application however can remove special characters such as ".,-?:!+=';&_/\()$@#%^*0123456789"
-- A Dynamic version handling illegal characters is on the way.
+- A dynamic version handling illegal characters is on the way.
+
+
+##Instructions
 
 1. Open the application and SentimentCalc GUI will appear. Click 'Open txt file' on to select a PLAIN .txt file of your choosing.
 
