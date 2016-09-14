@@ -54,19 +54,6 @@ def main():
     global modeWarriner
 
 
-    #wb = openpyxl.load_workbook("~/Desktop/WSC/amels_dictionaries.xlsx")
-
-    #output = popen('find `pwd` -type file -name \\amels_dictionaries.xlsx | head -n 1', shell=True)
-    #newoutput = (output.read())
-    #rnew = newoutput.strip('\n')
-    #wb = openpyxl.load_workbook(rnew)
-
-
-
-    #wb = openpyxl.load_workbook(openmyfolder2())
-
-    #a = '/Users/chriscintron/Desktop/Remember/amelsss_dictionaries.xlsx'
-    #find `pwd` -type file -name \amels_dictionaries.xlsx
     xlSheet1 = wb1.get_sheet_by_name('labMTwords-English')
     xlSheet2 = wb1.get_sheet_by_name("Warriner-English")
 
