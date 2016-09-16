@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Word Sentiment Calculator w/ GUI
+Text Sentiment Calculator w/ GUI
 Authors: Chris Cintron, Matt Novak
 Created April 2016
 
@@ -18,14 +18,14 @@ import re
 
 def openmyfolder():
     global rawInput
-    filename = askopenfilename(message= "Pick a .txt file to analyze")
+    filename = askopenfilename(title= "Pick a .txt file to analyze")
     InputFile = open(filename)
     rawInput = InputFile.read()
     InputFile.close()
     return rawInput
 
 def openmyfolder2():
-    filename = askopenfilename(message= "Select the DDods and Warriner Dictionaires")
+    filename = askopenfilename(title= "Select the DDods and Warriner Dictionaires")
     global wb1
     wb1 = openpyxl.load_workbook(filename)
 
@@ -277,13 +277,13 @@ def main():
     ws.write(5, 12, str(modeWarriner))
 
     #Save into selected directory
-    your_dir = askdirectory(message= "Where would you like to save this?")
+    your_dir = askdirectory(title= "Where would you like to save this?")
     wb.save(str(your_dir) + "/word_sentiment_results.xls")
 
 
 #Window size and title
 root=Tk()
-#root.configure(background='silver')
+
 root.geometry("480x250+400+200")
 root.title("Word Sentiment Calculator")
 
