@@ -13,6 +13,7 @@ import xlwt
 import openpyxl
 from tkinter import Button, Label, Grid, Tk, E
 from tkinter.filedialog import askopenfilename, asksaveasfile, askdirectory
+import re
 
 
 def openmyfolder():
@@ -33,7 +34,7 @@ def openmyfolder2():
 def main():
 
     #Inputs for Original Dict
-    #global totalwordcount
+    #global totalwrdcount
     global uniqwordcount
     global modeValue
     global modeKey
@@ -73,17 +74,11 @@ def main():
         Value = xlSheet2.cell(row=i , column=2).value #cell Bi
         dictWarriner.update({ Key : Value }) #Adds them to dictionary
 
-    #remove illegal characters
-    strDelete = ".,-?:!+=';&_/\()$@#%^*0123456789"""
-    finalInput = ""
-
-    for i in rawInput:
-        if i not in strDelete:
-            finalInput += i
-        else:
-            continue
-    finalInput = finalInput.lower()
-    finalInput = finalInput.split()
+    #Remove everycharacter EXCEPT a-z, A-Z, and whitespace
+    pattern = re.compile('\w+')
+    results = re.sub(r'[^a-zA-Z\s]', '', rawInput)
+    new_rawInput = results.lower()
+    finalInput = pattern.findall(new_rawInput)
 
     #Loops through each item in list and adds it into dictionary. Adds + 1.
     #If already in dictionary, adds (the value) + 1
@@ -253,7 +248,7 @@ def main():
     ws.write(3, 9, "Mode")
     ws.write(4, 9, "Mean")
     ws.write(4, 10, "N/a")
-    ws.write(5, 9, "Mode Word")
+    ws.write(5, 9, "Mode Word(s)")
 
     #Inputs for Original Dict
 
@@ -268,7 +263,7 @@ def main():
     ws.write(2, 11, uniqLabMTWords)
     ws.write(3, 11, modeLabMTWordsValue)
     ws.write(4, 11, meanLabMTWords)
-    ws.write(5, 11, modeLabMTWords)
+    ws.write(5, 11, str(modeLabMTWords))
 
     #inputs for Warriner
     ws.write(1, 12, freqWarriner)
@@ -276,10 +271,11 @@ def main():
     ws.write(3, 12, modeWarrinerValue)
     ws.write(4, 12, meanWarriner)
     ws.write(5, 12, str(modeWarriner))
-
+    
     #Save into selected directory
     your_dir = askdirectory(message= "Where would you like to save this?")
     wb.save(str(your_dir) + "/word_sentiment_results.xls")
+
 
 #Window size and title
 root=Tk()
