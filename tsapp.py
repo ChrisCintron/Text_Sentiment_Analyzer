@@ -94,7 +94,6 @@ def main():
 
 
     #find the mode
-
     modeKey = []
     modeValue = 0
 
@@ -107,18 +106,15 @@ def main():
             modeKey.append(i)
 
     #Variables for Dodds
-    wordsfoundDodds = {}
     modeLabMTWords = []
     modeLabMTWordsValue = 0
     sumLabMTWords = 0
     freqLabMTWords = 0
     uniqLabMTWords = 0
+    dodds_orphanlist = []
 
     for i in dictInput:
         if i in dictLabMTWords.keys():
-            Key = i
-            Value = dictInput[i]
-            wordsfoundDodds.update({ Key : Value }) #Adds them to dictionary
 
             sumLabMTWords += dictLabMTWords[i] * dictInput[i]
             freqLabMTWords += dictInput[i]
@@ -129,16 +125,21 @@ def main():
                 modeLabMTWords[:] = []
                 modeLabMTWordsValue = dictInput[i]
                 modeLabMTWords.append(i)
+
+            else: #Add to orphan list
+                dodds_orphanlist.append(i)
+
     meanLabMTWords = sumLabMTWords / freqLabMTWords
 
 
 
-    #finds the total score from Warriner scale
+    #Variables for Warriner
     modeWarriner = []
     modeWarrinerValue = 0
     sumWarriner = 0
     freqWarriner = 0
     uniqWarriner = 0
+    warriner_orphanlist = []
 
     for i in dictInput:
         if i in dictWarriner.keys():
@@ -152,6 +153,9 @@ def main():
                 modeWarriner[:] = []
                 modeWarrinerValue = dictInput[i]
                 modeWarriner.append(i)
+        else: #Add to orphan list
+            warriner_orphanlist.append(i)
+
     meanWarriner = sumWarriner / freqWarriner
 
 
@@ -165,7 +169,6 @@ def main():
     v53 = Label(root, text="Warriner", bg="white", fg="black")
     v53.grid(row=5,column=3)
 
-
     #Total Word Count Row
     v60 = Label(root, text="Total Word Count", bg="white", fg="black")
     v60.grid(row=6,sticky=E)
@@ -175,9 +178,6 @@ def main():
     v62.grid(row=6,column=2)
     v63 = Label(root, text= freqWarriner, bg="white", fg="black")
     v63.grid(row=6,column=3)
-
-
-
 
     #Total Unique Words Row
     v70 = Label(root, text="Total Unique Words", bg="white", fg="black")
@@ -235,7 +235,10 @@ def main():
     #Headers
     ws.write(0, 0, "Total Words")
     ws.write(0, 1, "Frequency")
-    ws.write(0, 3, "Orphan Words")
+    ws.write(0, 3, "Dodds Orphan Words")
+    ws.write(0, 4, "Warriner Orphan Words")
+    ws.write(2, 3, str(dodds_orphanlist))
+    ws.write(2, 4, str(warriner_orphanlist))
 
     #Table for Key Indicator
     #Rows
