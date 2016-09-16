@@ -2,16 +2,15 @@
 
 Authors: Chris Cintron, Matt Novak
 April 2016
-Last Update: September 14, 2016
+Last Update: September 16, 2016
 
 How to use:
 Mac Version: https://github.com/ChrisCintron/Text_Sentiment_Analyzer/SentimentCalc.app.zip
-Windows Version: Coming soon..
+Windows Version: https://github.com/ChrisCintron/Text_Sentiment_Analyzer/dist.zip
 
 ##IMPORTANT
-- Make sure you have downloaded both the zip file AND 'amels_dictionaries' from the repo. This dictionary is needed in order for the program to work.
-- Application currently only supports PLAIN TEXT FILES. Make sure your text file is cleaned up and only contains characters   A-Z. The application however can remove special characters such as ".,-?:!+=';&_/\()$@#%^*0123456789"
-- A dynamic version handling illegal characters is on the way.
+- Make sure you have downloaded both the appropriate zip file AND 'amels_dictionaries' from the repo. This dictionary is needed in order for the program to work.
+- Application currently only supports PLAIN TEXT FILES. Any other file type will most likely lead to a crash.
 
 
 ##Instructions
