@@ -142,6 +142,7 @@ def main():
 
     for i in dictInput:
         if i in dictWarriner.keys():
+
             sumWarriner += dictWarriner[i] * dictInput[i]
             freqWarriner += dictInput[i]
             uniqWarriner += 1
@@ -255,7 +256,7 @@ def main():
     ws.write(1, 10, totalwordcount)
     ws.write(2, 10, uniqwordcount)
     ws.write(3, 10, modeValue)
-    ws.write(5, 10, modeKey)
+    ws.write(5, 10, str(modeKey))
 
 
     #inputs for Dodds
@@ -271,7 +272,7 @@ def main():
     ws.write(3, 12, modeWarrinerValue)
     ws.write(4, 12, meanWarriner)
     ws.write(5, 12, str(modeWarriner))
-    
+
     #Save into selected directory
     your_dir = askdirectory(message= "Where would you like to save this?")
     wb.save(str(your_dir) + "/word_sentiment_results.xls")
