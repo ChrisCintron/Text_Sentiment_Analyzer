@@ -6,6 +6,7 @@ Last Update: September 16, 2016
 
 How to use:
 Mac Version: https://github.com/ChrisCintron/Text_Sentiment_Analyzer/SentimentCalc.app.zip
+
 Windows Version: https://github.com/ChrisCintron/Text_Sentiment_Analyzer/dist.zip
 
 ##IMPORTANT
