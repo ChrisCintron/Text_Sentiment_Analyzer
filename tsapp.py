@@ -172,7 +172,6 @@ def main():
     #Total Word Count Row
     v60 = Label(root, text="Total Word Count", bg="white", fg="black")
     v60.grid(row=6, column=0)
-
     v61 = Label(root, text= totalwordcount, bg="white", fg="black")
     v61.grid(row=6,column=1)
     v62 = Label(root, text= freqLabMTWords, bg="white", fg="black")
@@ -183,7 +182,6 @@ def main():
     #Total Unique Words Row
     v70 = Label(root, text="Total Unique Words", bg="white", fg="black")
     v70.grid(row=7, column=0)
-
     v71 = Label(root, text= uniqwordcount, bg="white", fg="black")
     v71.grid(row=7, column=1)
     v72 = Label(root, text= uniqLabMTWords, bg="white", fg="black")
