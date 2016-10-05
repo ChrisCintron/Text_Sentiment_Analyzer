@@ -11,7 +11,7 @@ Created April 2016
 from os import popen
 import xlwt
 import openpyxl
-from tkinter import Button, Label, Grid, Tk, E
+from tkinter import Button, Label, Grid, Tk
 from tkinter.filedialog import askopenfilename, asksaveasfile, askdirectory
 import re
 
@@ -171,7 +171,8 @@ def main():
 
     #Total Word Count Row
     v60 = Label(root, text="Total Word Count", bg="white", fg="black")
-    v60.grid(row=6,sticky=E)
+    v60.grid(row=6, column=0)
+
     v61 = Label(root, text= totalwordcount, bg="white", fg="black")
     v61.grid(row=6,column=1)
     v62 = Label(root, text= freqLabMTWords, bg="white", fg="black")
@@ -181,7 +182,8 @@ def main():
 
     #Total Unique Words Row
     v70 = Label(root, text="Total Unique Words", bg="white", fg="black")
-    v70.grid(row=7, sticky=E)
+    v70.grid(row=7, column=0)
+
     v71 = Label(root, text= uniqwordcount, bg="white", fg="black")
     v71.grid(row=7, column=1)
     v72 = Label(root, text= uniqLabMTWords, bg="white", fg="black")
@@ -191,7 +193,7 @@ def main():
 
     #Mode Row
     v80 = Label(root, text="Mode", bg="white", fg="black")
-    v80.grid(row=8, sticky=E)
+    v80.grid(row=8, column=0)
     v81 = Label(root, text= modeValue, bg="white", fg="black")
     v81.grid(row=8, column=1)
     v82 = Label(root, text= modeLabMTWordsValue, bg="white", fg="black")
@@ -201,7 +203,7 @@ def main():
 
     #Mean Row
     v90 = Label(root, text="Mean", bg="white", fg="black")
-    v90.grid(row=9, sticky=E)
+    v90.grid(row=9, column= 0)
     v91 = Label(root, text="N/a", bg="white", fg="black")
     v91.grid(row=9, column=1)
     v92 = Label(root, text= meanLabMTWords, bg="white", fg="black")
@@ -212,7 +214,7 @@ def main():
 
     #Mode Word
     v10 = Label(root, text="Mode Word", bg="white", fg="black")
-    v10.grid(row=10, sticky=E)
+    v10.grid(row=10, column=0)
     v11 = Label(root, text= modeKey, bg="white", fg="black")
     v11.grid(row=10, column=1)
     v12 = Label(root, text= modeLabMTWords, bg="white", fg="black")
@@ -285,8 +287,7 @@ def main():
 root=Tk()
 
 root.geometry("480x250+400+200")
-root.title("Word Sentiment Calculator")
-
+root.title("Text Sentiment Analyzer")
 
 #Buttons
 readbutton = Button(root, text="Open .txt file", bg="white", fg="black", command= openmyfolder)
